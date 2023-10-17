@@ -1,0 +1,272 @@
+:root {
+    /* PRIMARY */
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+
+    /* NEUTRAL */
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+@font-face {
+    font-family: "Inter regular";
+    src: url("./assets/fonts/static/Inter-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Inter bold";
+    src: url("./assets/fonts/static/Inter-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Inter extraBold";
+    src: url("./assets/fonts/static/Inter-ExtraBold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter regular;
+}
+
+body {
+    padding: 1rem 10%;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: var(--very-dark-blue);
+}
+
+.menu-icon,
+nav .close-icon {
+    cursor: pointer;
+    display: none;
+}
+
+nav.show {
+    right: 0;
+    width: 70%;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul li a:hover {
+    color: var(--soft-red);
+}
+
+main {
+    display: grid;
+    grid-template-rows: 90% auto;
+    grid-template-columns: 67% 33%;
+    gap: clamp(2rem, 5vw, 1.5rem);
+    margin: 1rem 0;
+}
+
+#main {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#main .main-img {
+    background: url('./assets/images/image-web-3-desktop.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    height: 300px;
+    grid-column: span 2;
+}
+
+#main .main-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding-top: 1.5rem;
+}
+
+#main h1 {
+    color: var(--very-dark-blue);
+    font-family: Inter extraBold;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+#main .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--dark-grayish-blue);
+}
+
+#main .btn {
+    background-color: var(--soft-red);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--off-white);
+    padding: 10px 20px;
+    width: fit-content;
+    font-family: Inter bold;
+    letter-spacing: 2px;
+}
+
+#main .btn:hover {
+    background-color: var(--very-dark-blue);
+}
+
+#new {
+    background-color: var(--very-dark-blue);
+    color: var(--off-white);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#new h2 {
+    color: var(--soft-orange);
+    font-size: 2rem;
+    font-family: Inter bold;
+}
+
+#new h3 {
+    margin-bottom: 1rem;
+}
+
+#new h3 a {
+    color: var(--off-white);
+    text-decoration: none;
+    font-family: Inter bold;
+}
+
+#new h3 a:hover {
+    color: var(--soft-orange);
+}
+
+#new p {
+    font-size: 0.9rem;
+    color: var(--grayish-blue);
+}
+
+#trending {
+    grid-column: span 2;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+#trending .trend {
+    display: flex;
+}
+
+#trending .trend > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding-left: 1rem;
+}
+
+#trending .trend img {
+    height: 130px;
+}
+
+#trending .trend .trend-number {
+    color: var(--grayish-blue);
+    font-family: Inter bold;
+    font-size: 2rem;
+}
+
+#trending .trend .trend-title {
+    text-decoration: none;
+    color: var(--very-dark-blue);
+    font-family: Inter extraBold;
+}
+
+#trending .trend .trend-title:hover {
+    color: var(--soft-red);
+}
+
+#trending .trend .trend-details {
+    color: var(--dark-grayish-blue);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 0px;
+        height: 100%;
+        background-color: var(--off-white);
+        transition: all .3s;
+    }
+
+    nav .close-icon {
+        position: absolute;
+        top: 2rem;
+        right: 1rem;
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin: 9rem 1rem;
+    }
+
+    main {
+        grid-template: auto auto auto / 100%;
+    }
+
+    #main {
+        grid-row: 1 / 2;
+    }
+
+    #new {
+        grid-row: 2 / 3;
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #main .main-img {
+        background: url('./assets/images/image-web-3-mobile.jpg') no-repeat center;
+        background-size: cover;
+        height: 250px;
+    }
+}
+
