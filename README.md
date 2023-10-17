@@ -34,8 +34,8 @@ Mobile
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [News Homepage solution](https://www.frontendmentor.io/solutions/responsive-news-homepage-J2is95YlUu)
+- Live Site URL: [News Homepage](https://news-homepage-xi-orpin.vercel.app/)
 
 ## My process
 
